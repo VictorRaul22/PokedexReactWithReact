@@ -1,5 +1,5 @@
 {
-  "name": "projectinitial",
+  "name": "pokedex-react-redux",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VictorRaul22/InitialProjectWebpackReact.git"
+    "url": "git+https://github.com/VictorRaul22/PokedexReactWithReact.git"
   },
   "keywords": [
     "react",
@@ -29,9 +29,9 @@
   "author": "Victor Chirinos Jimenez <victor-raul-22@hotmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/VictorRaul22/InitialProjectWebpackReact/issues"
+    "url": "https://github.com/VictorRaul22/PokedexReactWithReact/issues"
   },
-  "homepage": "https://github.com/VictorRaul22/InitialProjectWebpackReact#readme",
+  "homepage": "https://github.com/VictorRaul22/PokedexReactWithReact#readme",
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
