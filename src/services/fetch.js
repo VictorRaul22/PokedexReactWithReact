@@ -8,11 +8,17 @@ const fetchConf = async (url, options = {}) => {
   // const dispatch = useDispatch();
   try {
     const result = await fetch(`${URL}${url}`, options);
-    if (!result.ok) throw Error(result.status);
+
+    if (!result.ok)
+      throw new Error(JSON.stringify({ code: result.status, where: "fetch" }));
     json = await result.json();
     return json;
-  } catch (err) {
-    return err;
+  } catch (e) {
+    const errorParse = JSON.parse(e.message);
+    // console.log(errorParse, "Error fetch")
+
+    const error = { ...errorParse, code: errorParse.code || "Code undefined" };
+    throw error;
   }
   // return json;
 };

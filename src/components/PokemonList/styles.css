@@ -9,3 +9,8 @@
   text-align: center;
   color: #999;
 }
+.PokemonCard-favorite {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

@@ -6,7 +6,9 @@ import { cleanError } from "../../actions";
 import "./styles.css";
 
 function Layout({ children }) {
-  const errorMessage = useSelector((state) => state.error);
+  const errorMessage = useSelector((state) => state.ui.get("error")).toJS();
+  // console.log(errorMessage, "layout")
+  // console.log(errorMessage)
   // window.console.log(errorMessage, "sss")
   const dispatch = useDispatch();
   const handleDismiss = () => {
@@ -15,12 +17,12 @@ function Layout({ children }) {
   return (
     <div className="Layout-content">
       <Menu />
-      {errorMessage.length ? (
+      {errorMessage?.content ? (
         <div className="wrapper">
           <Message
             onDismiss={handleDismiss}
-            header={`Error: ${errorMessage.error && errorMessage}`}
-            content={errorMessage.error}
+            header={`Error: ${errorMessage.header || null}`}
+            content={errorMessage.content || null}
             color="red"
           />
         </div>
