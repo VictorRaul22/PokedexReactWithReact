@@ -2,17 +2,14 @@ import React from "react";
 import Menu from "@components/Menu";
 import { useDispatch, useSelector } from "react-redux";
 import { Message } from "semantic-ui-react";
-import { cleanError } from "../../actions";
+import { clearError } from "../../slices/ui";
 import "./styles.css";
 
 function Layout({ children }) {
-  const errorMessage = useSelector((state) => state.ui.get("error")).toJS();
-  // console.log(errorMessage, "layout")
-  // console.log(errorMessage)
-  // window.console.log(errorMessage, "sss")
+  const errorMessage = useSelector((state) => state.ui.error);
   const dispatch = useDispatch();
   const handleDismiss = () => {
-    dispatch(cleanError());
+    dispatch(clearError());
   };
   return (
     <div className="Layout-content">

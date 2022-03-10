@@ -3,7 +3,7 @@ import { Divider, Grid, Icon, Image, Label } from "semantic-ui-react";
 import { MAIN_COLOR, FAV_COLOR, GREY_COLOR } from "@utils/constants";
 import { useDispatch } from "react-redux";
 import "./styles.css";
-import { setFavorite } from "../../actions";
+import { setFavorite } from "../../slices/pokemon";
 
 function PokemonCard({ pokemon }) {
   const dispatch = useDispatch();

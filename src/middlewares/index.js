@@ -1,13 +1,13 @@
-import { typeErrors } from "../actions/type";
+// import { typeErrors } from "../actions/type";
 
 export const logActions = () => (next) => (actionInfo) => {
   window.console.log("disparando: ", actionInfo);
   next(actionInfo);
 };
 export const reportError = () => (next) => (actionInfo) => {
-  const { action } = actionInfo;
-  if (action?.type === typeErrors.SET_ERROR) {
-    window.console.error(action.payload);
+  const { type } = actionInfo;
+  if (type === "ui/setError") {
+    window.console.error(actionInfo.payload, "desde midleware");
   }
   next(actionInfo);
 };
