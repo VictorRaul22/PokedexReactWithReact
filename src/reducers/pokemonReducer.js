@@ -16,6 +16,7 @@ const pokemonReducerObject = (state, payload = {}) => ({
   [typePokemons.SET_POKEMON]: state.set("list", fromJS(payload)),
   [typePokemons.SET_FAVORITE]: ListFavorite(state, payload),
 });
+
 const pokemonReducer = (state = initialState, action = { type: null }) => {
   if (pokemonReducerObject(state)[action.type]) {
     return pokemonReducerObject(state, action.payload)[action.type];
